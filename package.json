@@ -1,7 +1,7 @@
 {
   "name": "@fe_korey/resume",
   "version": "1.0.3",
-  "description": "赵柯宇的web前端工程师简历",
+  "description": "李豆豆的web前端工程师简历",
   "main": "dist/index.html",
   "homepage": "https://www.flqin.com",
   "keywords": [
@@ -23,6 +23,7 @@
   "dependencies": {
     "@fe_korey/fullpage": "^1.0.5",
     "@fe_korey/mvvm": "^2.0.0",
+    "echarts": "^4.7.0",
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
@@ -77,9 +78,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zhaoky/flqin.git"
+    "url": "git+https://github.com/michael113c/flqin.git"
   },
-  "bugs": "https://github.com/zhaoky/flqin/issues",
+  "bugs": "https://github.com/michael113c/flqin/issues",
   "author": "Korey <keyu.zhao@foxmail.com>",
   "license": "MIT",
   "husky": {

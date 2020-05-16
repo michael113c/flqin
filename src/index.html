@@ -5,7 +5,7 @@
     <title>
       web前端工程师简历
     </title>
-    <meta content="赵柯宇的web前端工程师个人简历，前端学习，前端开发" name="description" />
+    <meta content="李豆豆的web前端工程师个人简历，前端学习，前端开发" name="description" />
     <meta content="web前端，FE，web前端个人简历，前端开发" name="keywords" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -76,19 +76,20 @@
       </section>
       <!-- 能力 -->
       <section class="skill">
-        <div class="content">
-          <div class="skill-circle">
-            <ul class="out">
-              <li class="item" v-style="item.bg" v-for="item in skill.outCircleList" v-text="item.name"></li>
-            </ul>
-            <ul class="inner">
-              <li class="inner-item" v-style="item.bg" v-for="item in skill.innerCircleList" v-text="item.name"></li>
-            </ul>
-          </div>
-          <div class="des" v-class="isEng?'-des-en':''">
-            <p v-for="item in skill.desList" v-text="item"></p>
-          </div>
-        </div>
+        <div id="echart" style="width: 100vw;height: 100vh;padding: 15vh 15vw;"></div>
+        <!--<div class="content">-->
+        <!--  <div class="skill-circle">-->
+        <!--    <ul class="out">-->
+        <!--      <li class="item" v-style="item.bg" v-for="item in skill.outCircleList" v-text="item.name"></li>-->
+        <!--    </ul>-->
+        <!--    <ul class="inner">-->
+        <!--      <li class="inner-item" v-style="item.bg" v-for="item in skill.innerCircleList" v-text="item.name"></li>-->
+        <!--    </ul>-->
+        <!--  </div>-->
+        <!--  <div class="des" v-class="isEng?'-des-en':''">-->
+        <!--    <p v-for="item in skill.desList" v-text="item"></p>-->
+        <!--  </div>-->
+        <!--</div>-->
       </section>
       <!-- 经历 -->
       <section class="experience">
@@ -135,7 +136,7 @@
             </li>
           </ul>
           <div class="more">
-            <a href="https://github.com/zhaoky/demos" target="_blank" v-text="works.viewMore"></a>
+            <a href="https://github.com/michael113c/demos" target="_blank" v-text="works.viewMore"></a>
           </div>
           <div class="switch" v-on:click="switchWork($event)">
             <i class="left" v-style="workIndex===0?{filter:'brightness(70%)'}:{}"></i>
@@ -169,8 +170,8 @@
     <!-- footer -->
     <footer v-show="pageIndex === 4">
       <div class="github">
-        <a href="https://github.com/zhaoky" target="_blank">
-          <img src="https://img.shields.io/github/stars/zhaoky/flqin.svg?style=social" alt="github" />
+        <a href="https://github.com/michael113c" target="_blank">
+          <img src="https://img.shields.io/github/stars/michael113c/flqin.svg?style=social" alt="github" />
         </a>
       </div>
       <p v-for="item in footer" v-text="item"></p>

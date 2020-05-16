@@ -4,6 +4,7 @@ import './media.less';
 import res from './data';
 import MVVM from '@fe_korey/mvvm';
 import { Fullpage } from '@fe_korey/fullpage';
+import echarts from 'echarts';
 
 const model = {
   selectedLang: 0,
@@ -18,9 +19,67 @@ const model = {
 
 let fp;
 
+
+const skillData = {
+  dataset: {
+    source: [
+      ['score', 'amount', 'product'],
+      [40, 40, 'node'],
+      [65, 65, 'photoshop'],
+      [30, 30, 'javascript'],
+      [80, 80, 'css3'],
+      [85, 85, 'vue'],
+      [90, 90, 'html'],
+    ]
+  },
+  grid: {containLabel: true},
+  xAxis: {
+    name: 'Rank',
+    nameTextStyle: {fontSize: '30', fontWeight: 'bold', color: '#a8a'},
+    axisLabel: {fontSize: '20', fontWeight: 'bold', color: '#fff', fontStyle: 'oblique'},
+    splitLine: {show: false}
+  },
+  yAxis: {
+    type: 'category',
+    nameTextStyle: {fontSize: '30', fontWeight: 'bold', color: '#fff'},
+    axisLabel: {fontSize: '20', fontWeight: 'bold', color: '#fff'}
+  },
+  visualMap: {
+    orient: 'horizontal',
+    left: 'center',
+    min: 10,
+    max: 100,
+    text: ['High Score', 'Low Score'],
+    // Map the score column to color
+    dimension: 0,
+    inRange: {
+      color: ['#D7DA8B', '#E15457']
+    },
+    itemWidth: 30,
+    itemHeight:210,
+    textStyle: {fontSize: '15', fontWeight: 'bold', color: '#fff'}
+  },
+  series: [
+    {
+      type: 'bar',
+      encode: {
+        // Map the "amount" column to X axis.
+        x: 'amount',
+        // Map the "product" column to Y axis
+        y: 'product'
+      }
+    }
+  ]
+};
+function echartInit () {
+  let myChart = echarts.init(document.getElementById('echart'));
+  myChart.setOption(skillData);
+}
+
 const data = {
   view: document.getElementById('app'),
-  model: { ...res.cn, ...model },
+  model: { ...res.cn, ...model
+  },
   methods: {
     titleHandler() {
       data.model.isShowNav = !data.model.isShowNav;
@@ -77,6 +136,7 @@ const data = {
     }
   },
   mounted() {
+    echartInit();
     appInit();
     setWorkDraw();
     createFullpage();
@@ -198,7 +258,7 @@ function createFullpage() {
 function consoleTip() {
   console.log('Hi! 朋友，感谢您愿意调试简历代码。');
   console.log('本简历采用%c简易版MVVM (https://www.npmjs.com/package/@fe_korey/mvvm )及Fullpage (https://www.npmjs.com/package/@fe_korey/fullpage )，webpack开发构建。', 'color:red');
-  console.log('源码已开源在（https://github.com/zhaoky/flqin )，任何问题请提issue,喜欢请点个star吧！');
+  console.log('源码已开源在（https://github.com/michael113c/flqin )，任何问题请提issue,喜欢请点个star吧！');
   console.log('如果您有什么建议或者想学习前端，欢迎您加入我们,我们互相学习，共同进步^_^  %cQQ小群(http://t.cn/RtlQbTq)', 'color:red');
 }
 
